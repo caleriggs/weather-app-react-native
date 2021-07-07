@@ -1,30 +1,29 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import CurrentWeather from './Components/CurrentWeather';
+import Home from './Components/Home';
 
-const styles = StyleSheet.create(
-  {
-    header: {
-      fontSize: 100
-    },
-    container: {
-      flex: 1,
-      padding: 20,
-      justifyContent: "center"
-    }
-  }
-)
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Lets make a weather app!!!</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{title: 'Weather App'}}
+        />
+        <Stack.Screen
+          name="CurrentWeather"
+          component={CurrentWeather}
+          options={{title: 'Current Weather'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
 
 export default App;
