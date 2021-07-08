@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {SafeAreaView, Text} from 'react-native';
-import env from '../env';
+import env from '../../env';
 
 const CurrentWeather = () => {
   const [weatherData, setWeatherData] = useState({});
