@@ -8,20 +8,25 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    padding: 10,
+    width: '90%',
   },
   button: {
     backgroundColor: 'blue',
     height: 50,
-    width: 100,
+    width: '100%',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white',
-  },
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
+    fontSize: 30,
+    fontWeight: '300',
   },
 });
 

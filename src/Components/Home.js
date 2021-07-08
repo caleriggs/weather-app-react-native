@@ -6,7 +6,7 @@ const Home = props => {
   const {navigation} = props;
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Lets make a weather app!!!</Text>
+      <Text style={styles.header}>Weather</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
