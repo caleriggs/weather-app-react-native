@@ -5,10 +5,10 @@ import env from '../../env';
 const CurrentWeather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const fetchWeatherData = () => {
+      setIsLoading(true);
       fetch(env.currentWeatherUrl)
         .then(response => {
           if (!response.ok) {
@@ -18,16 +18,16 @@ const CurrentWeather = () => {
           return response.json();
         })
         .then(data => {
-          console.log('data', data);
+          console.log('SUCCESS: ', data);
           setWeatherData(data);
-          console.log('data keys: ', Object.keys(data));
-          console.log('weather data: ', weatherData);
-          return;
+          setIsLoading(false);
         })
-        .catch(error => console.error('error: ', error));
+        .catch(error => {
+          setIsLoading(false);
+          console.error('Error fetching weather data: ', error);
+        });
     };
     fetchWeatherData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (isLoading || !weatherData) {
     return <Text>Getting Weather Data</Text>;
@@ -35,7 +35,7 @@ const CurrentWeather = () => {
   return (
     <SafeAreaView>
       <Text>Current Weather: Summertime!!!</Text>
-      {console.log('weather data: ', weatherData)}
+      <Text>Add the weather below</Text>
     </SafeAreaView>
   );
 };
