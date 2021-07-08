@@ -3,7 +3,7 @@ import {SafeAreaView, Text} from 'react-native';
 import env from '../../env';
 
 const CurrentWeather = () => {
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [fetchError, setFetchError] = useState(false);
 
@@ -29,6 +29,9 @@ const CurrentWeather = () => {
     fetchWeatherData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  if (isLoading || !weatherData) {
+    return <Text>Getting Weather Data</Text>;
+  }
   return (
     <SafeAreaView>
       <Text>Current Weather: Summertime!!!</Text>
