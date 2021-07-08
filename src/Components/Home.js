@@ -6,12 +6,12 @@ const Home = props => {
   const {navigation} = props;
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Lets make a weather app!!!</Text>
+      <Text style={styles.header}>WEATHER</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('CurrentWeather')}>
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>GET STARTED</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -1,0 +1,26 @@
+{
+  "base": "stations",
+  "clouds": {"all": 8}, //percentage of cloud coverage
+  "cod": 200,
+  "coord": {"lat": 16.3333, "lon": -15},
+  "dt": 1625699463, // Time of data calculation
+  "id": 2246451, // City ID
+  "main": {
+    "feels_like": 85.28,
+    "grnd_level": 1006,
+    "humidity": 47,
+    "pressure": 1011,
+    "sea_level": 1011,
+    "temp": 84.63,
+    "temp_max": 84.63,
+    "temp_min": 84.63
+  },
+  "name": "Saint-Louis",
+  "sys": {"country": "SN", "sunrise": 1625639579, "sunset": 1625686589},
+  "timezone": 0, //Shift in seconds from UTC
+  "visibility": 10000,
+  "weather": [
+    {"description": "clear sky", "icon": "01n", "id": 800, "main": "Clear"}
+  ],
+  "wind": {"deg": 291, "gust": 23.49, "speed": 16.55}
+}

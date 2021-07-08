@@ -1,9 +1,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import CurrentWeather from './Components/CurrentWeather';
-import Home from './Components/Home';
+import CurrentWeather from './src/Components/CurrentWeather';
+import Home from './src/Components/Home';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,7 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{title: 'Weather App'}}
+          options={{title: 'Weather App', headerShown: false}}
         />
         <Stack.Screen
           name="CurrentWeather"
