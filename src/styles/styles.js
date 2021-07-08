@@ -49,6 +49,7 @@ export const currentWeatherStyles = StyleSheet.create({
   titleText: {
     color: 'darkslategrey',
     fontSize: 40,
+    fontWeight: '300',
   },
   image: {
     height: 80,
