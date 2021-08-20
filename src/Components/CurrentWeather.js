@@ -81,7 +81,9 @@ const CurrentWeather = () => {
           </View>
         </View>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={currentWeatherStyles.bottomScrollContainer}
+        showsVerticalScrollIndicator={false}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}

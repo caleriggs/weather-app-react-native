@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
@@ -63,8 +63,6 @@ export const currentWeatherStyles = StyleSheet.create({
     flexDirection: 'column',
     paddingHorizontal: 5,
     marginBottom: 10,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   highLowTemp: {
     justifyContent: 'center',
@@ -75,6 +73,9 @@ export const currentWeatherStyles = StyleSheet.create({
     color: 'darkslategrey',
     textAlign: 'center',
     fontSize: 15,
+  },
+  bottomScrollContainer: {
+    maxHeight: Platform.OS === 'android' ? '55%' : null,
   },
   dailyScrollContainer: {
     margin: 20,
