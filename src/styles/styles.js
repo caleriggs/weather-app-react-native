@@ -60,10 +60,21 @@ export const currentWeatherStyles = StyleSheet.create({
   },
   tempContainer: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
+    paddingHorizontal: 5,
+    marginBottom: 10,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
+  highLowTemp: {
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#0E9594',
+    flexDirection: 'row',
+  },
+  tempItem: {
+    flex: 1,
+    color: 'darkslategrey',
+    textAlign: 'center',
+    fontSize: 15,
   },
   dailyScrollContainer: {
     margin: 20,
@@ -82,13 +93,6 @@ export const currentWeatherStyles = StyleSheet.create({
     color: 'darkslategrey',
     fontSize: 100,
     fontWeight: '100',
-  },
-  tempItem: {
-    flex: 1,
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 15,
   },
 });
 

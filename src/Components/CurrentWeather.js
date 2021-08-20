@@ -64,21 +64,36 @@ const CurrentWeather = () => {
           source={{uri: getIcon(currentWeatherData.weather[0].icon)}}
           style={currentWeatherStyles.image}
         />
-        <Text
-          style={
-            currentWeatherStyles.currentTemp
-          }>{`${currentWeatherData.main.temp}`}</Text>
-        {/* <Text
-          style={
-            currentWeatherStyles.tempItem
-          }>{`Low: ${currentWeatherData.main.temp_min}`}</Text>
-        <Text
-          style={
-            currentWeatherStyles.tempItem
-          }>{`High: ${currentWeatherData.main.temp_max}`}</Text> */}
+        <View style={currentWeatherStyles.tempContainer}>
+          <Text
+            style={
+              currentWeatherStyles.currentTemp
+            }>{`${currentWeatherData.main.temp}`}</Text>
+          <View style={currentWeatherStyles.highLowTemp}>
+            <Text
+              style={
+                currentWeatherStyles.tempItem
+              }>{`L: ${currentWeatherData.main.temp_min}`}</Text>
+            <Text
+              style={
+                currentWeatherStyles.tempItem
+              }>{`H: ${currentWeatherData.main.temp_max}`}</Text>
+          </View>
+        </View>
       </View>
-      {/* <ScrollView style={currentWeatherStyles.tempContainer}> */}
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={currentWeatherStyles.hourlyScrollContainer}>
+          {hourlyWeatherData.map(hour => (
+            <HourlyWeatherItem
+              currentUnixTime={hour.dt}
+              offset={timezoneOffset}
+              temp={hour.temp}
+            />
+          ))}
+        </ScrollView>
         <View style={currentWeatherStyles.dailyScrollContainer}>
           {dailyWeatherData.map(day => (
             <DailyWeatherItem
@@ -89,17 +104,6 @@ const CurrentWeather = () => {
             />
           ))}
         </View>
-        <ScrollView
-          horizontal
-          style={currentWeatherStyles.hourlyScrollContainer}>
-          {hourlyWeatherData.map(hour => (
-            <HourlyWeatherItem
-              currentUnixTime={hour.dt}
-              offset={timezoneOffset}
-              temp={hour.temp}
-            />
-          ))}
-        </ScrollView>
       </ScrollView>
     </View>
   );
