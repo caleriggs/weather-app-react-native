@@ -11,7 +11,7 @@ const Home = props => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('CurrentWeather')}>
-          <Text style={styles.buttonText}>GET STARTED</Text>
+          <Text style={styles.buttonText}>GET THE WEATHER</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
